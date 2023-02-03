@@ -34,9 +34,7 @@ int main()
 
   
 
-  // declare number of random patterns as int. You can initialize it with 
-any number you wish
-  :
+  // declare number of random patterns as int. You can initialize it with any number you wish:
 
 
   /* Event loop never exits. */
