@@ -88,7 +88,7 @@ LOAD /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/
                 0x0000000000010020                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
                 0x0000000000010020                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
 
-.text           0x0000000000010020      0x6a0
+.text           0x0000000000010020      0x6b8
                 [!provide]                        PROVIDE (stext, ABSOLUTE (.))
  *(.interp)
  *(.hash)
@@ -136,53 +136,53 @@ LOAD /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/
  .text          0x0000000000010020       0x4c ../test_bsp//obj/HAL/src/crt0.o
                 0x0000000000010020                _start
  .text          0x000000000001006c        0x0 obj/default/hello_world_small.o
- .text.startup  0x000000000001006c      0x134 obj/default/hello_world_small.o
+ .text.startup  0x000000000001006c      0x14c obj/default/hello_world_small.o
                 0x000000000001006c                main
- .text          0x00000000000101a0        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
- .text.srand    0x00000000000101a0       0x14 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
-                0x00000000000101a0                srand
- .text.rand     0x00000000000101b4       0x60 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
-                0x00000000000101b4                rand
- .text          0x0000000000010214       0x60 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
-                0x0000000000010214                __muldi3
- .text          0x0000000000010274       0xe0 ../test_bsp//libhal_bsp.a(alt_load.o)
-                0x0000000000010274                alt_load
- .text          0x0000000000010354       0x2c ../test_bsp//libhal_bsp.a(alt_main.o)
-                0x0000000000010354                alt_main
- .text          0x0000000000010380       0x38 ../test_bsp//libhal_bsp.a(alt_putstr.o)
-                0x0000000000010380                alt_putstr
- .text          0x00000000000103b8        0x4 ../test_bsp//libhal_bsp.a(alt_usleep.o)
-                0x00000000000103b8                usleep
- .text          0x00000000000103bc       0x24 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
-                0x00000000000103bc                alt_irq_init
-                0x00000000000103dc                alt_sys_init
- .text          0x00000000000103e0       0x34 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
-                0x00000000000103e0                altera_avalon_jtag_uart_write
- .text          0x0000000000010414       0x78 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
-                0x0000000000010414                alt_busy_sleep
- .text          0x000000000001048c       0x18 ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
-                0x000000000001048c                alt_dcache_flush_all
- .text          0x00000000000104a4        0xc ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
-                0x00000000000104a4                alt_icache_flush_all
- .text          0x00000000000104b0        0x8 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
-                0x00000000000104b0                altera_nios2_gen2_irq_init
- .text          0x00000000000104b8       0x38 ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
-                0x00000000000104b8                alt_icache_flush
- .text          0x00000000000104f0        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
- .text.strlen   0x00000000000104f0       0x1c /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
-                0x00000000000104f0                strlen
- .text          0x000000000001050c      0x1b4 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
-                0x000000000001050c                __divsi3
-                0x0000000000010590                __modsi3
-                0x0000000000010604                __udivsi3
-                0x0000000000010668                __umodsi3
+ .text          0x00000000000101b8        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
+ .text.srand    0x00000000000101b8       0x14 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
+                0x00000000000101b8                srand
+ .text.rand     0x00000000000101cc       0x60 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
+                0x00000000000101cc                rand
+ .text          0x000000000001022c       0x60 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
+                0x000000000001022c                __muldi3
+ .text          0x000000000001028c       0xe0 ../test_bsp//libhal_bsp.a(alt_load.o)
+                0x000000000001028c                alt_load
+ .text          0x000000000001036c       0x2c ../test_bsp//libhal_bsp.a(alt_main.o)
+                0x000000000001036c                alt_main
+ .text          0x0000000000010398       0x38 ../test_bsp//libhal_bsp.a(alt_putstr.o)
+                0x0000000000010398                alt_putstr
+ .text          0x00000000000103d0        0x4 ../test_bsp//libhal_bsp.a(alt_usleep.o)
+                0x00000000000103d0                usleep
+ .text          0x00000000000103d4       0x24 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x00000000000103d4                alt_irq_init
+                0x00000000000103f4                alt_sys_init
+ .text          0x00000000000103f8       0x34 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                0x00000000000103f8                altera_avalon_jtag_uart_write
+ .text          0x000000000001042c       0x78 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
+                0x000000000001042c                alt_busy_sleep
+ .text          0x00000000000104a4       0x18 ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                0x00000000000104a4                alt_dcache_flush_all
+ .text          0x00000000000104bc        0xc ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                0x00000000000104bc                alt_icache_flush_all
+ .text          0x00000000000104c8        0x8 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+                0x00000000000104c8                altera_nios2_gen2_irq_init
+ .text          0x00000000000104d0       0x38 ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
+                0x00000000000104d0                alt_icache_flush
+ .text          0x0000000000010508        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
+ .text.strlen   0x0000000000010508       0x1c /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
+                0x0000000000010508                strlen
+ .text          0x0000000000010524      0x1b4 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
+                0x0000000000010524                __divsi3
+                0x00000000000105a8                __modsi3
+                0x000000000001061c                __udivsi3
+                0x0000000000010680                __umodsi3
  *(.gnu.warning.*)
  *(.fini)
                 [!provide]                        PROVIDE (__etext, ABSOLUTE (.))
                 [!provide]                        PROVIDE (_etext, ABSOLUTE (.))
                 [!provide]                        PROVIDE (etext, ABSOLUTE (.))
  *(.eh_frame_hdr)
-                0x00000000000106c0                . = ALIGN (0x4)
+                0x00000000000106d8                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__preinit_array_start, ABSOLUTE (.))
  *(.preinit_array)
                 [!provide]                        PROVIDE (__preinit_array_end, ABSOLUTE (.))
@@ -204,105 +204,105 @@ LOAD /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/
  *(SORT(.dtors.*))
                 [!provide]                        PROVIDE (__DTOR_END__, ABSOLUTE (.))
  *(.jcr)
-                0x00000000000106c0                . = ALIGN (0x4)
+                0x00000000000106d8                . = ALIGN (0x4)
 
-.rodata         0x00000000000106c0       0x7c
-                0x00000000000106c0                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
-                0x00000000000106c0                . = ALIGN (0x4)
+.rodata         0x00000000000106d8       0x7c
+                0x00000000000106d8                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
+                0x00000000000106d8                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x00000000000106c0       0x7c obj/default/hello_world_small.o
+                0x00000000000106d8       0x7c obj/default/hello_world_small.o
                                          0x79 (size before relaxing)
  *(.rodata1)
-                0x000000000001073c                . = ALIGN (0x4)
-                0x000000000001073c                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
-                0x00000000000106c0                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
+                0x0000000000010754                . = ALIGN (0x4)
+                0x0000000000010754                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
+                0x00000000000106d8                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
 
-.rwdata         0x000000000001073c        0x4 load address 0x0000000000010740
-                0x000000000001073c                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
-                0x000000000001073c                . = ALIGN (0x4)
+.rwdata         0x0000000000010754        0x4 load address 0x0000000000010758
+                0x0000000000010754                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
+                0x0000000000010754                . = ALIGN (0x4)
  *(.got.plt)
  *(.got)
  *(.data1)
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x000000000001073c        0x0 ../test_bsp//obj/HAL/src/crt0.o
- .data          0x000000000001073c        0x0 obj/default/hello_world_small.o
- .data          0x000000000001073c        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
- .data          0x000000000001073c        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
- .data          0x000000000001073c        0x0 ../test_bsp//libhal_bsp.a(alt_load.o)
- .data          0x000000000001073c        0x0 ../test_bsp//libhal_bsp.a(alt_main.o)
- .data          0x000000000001073c        0x0 ../test_bsp//libhal_bsp.a(alt_putstr.o)
- .data          0x000000000001073c        0x0 ../test_bsp//libhal_bsp.a(alt_usleep.o)
- .data          0x000000000001073c        0x0 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
- .data          0x000000000001073c        0x0 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .data          0x000000000001073c        0x0 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
- .data          0x000000000001073c        0x0 ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .data          0x000000000001073c        0x0 ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .data          0x000000000001073c        0x0 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .data          0x000000000001073c        0x0 ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
- .data          0x000000000001073c        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
- .data          0x000000000001073c        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
-                0x000000000001873c                _gp = ABSOLUTE ((. + 0x8000))
+ .data          0x0000000000010754        0x0 ../test_bsp//obj/HAL/src/crt0.o
+ .data          0x0000000000010754        0x0 obj/default/hello_world_small.o
+ .data          0x0000000000010754        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
+ .data          0x0000000000010754        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
+ .data          0x0000000000010754        0x0 ../test_bsp//libhal_bsp.a(alt_load.o)
+ .data          0x0000000000010754        0x0 ../test_bsp//libhal_bsp.a(alt_main.o)
+ .data          0x0000000000010754        0x0 ../test_bsp//libhal_bsp.a(alt_putstr.o)
+ .data          0x0000000000010754        0x0 ../test_bsp//libhal_bsp.a(alt_usleep.o)
+ .data          0x0000000000010754        0x0 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
+ .data          0x0000000000010754        0x0 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .data          0x0000000000010754        0x0 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .data          0x0000000000010754        0x0 ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x0000000000010754        0x0 ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x0000000000010754        0x0 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .data          0x0000000000010754        0x0 ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .data          0x0000000000010754        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
+ .data          0x0000000000010754        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
+                0x0000000000018754                _gp = ABSOLUTE ((. + 0x8000))
                 [!provide]                        PROVIDE (gp, _gp)
  *(.rwdata .rwdata.*)
  *(.sdata .sdata.* .gnu.linkonce.s.*)
- .sdata         0x000000000001073c        0x4 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
-                0x000000000001073c                jtag_uart_0
+ .sdata         0x0000000000010754        0x4 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x0000000000010754                jtag_uart_0
  *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
-                0x0000000000010740                . = ALIGN (0x4)
-                0x0000000000010740                _edata = ABSOLUTE (.)
+                0x0000000000010758                . = ALIGN (0x4)
+                0x0000000000010758                _edata = ABSOLUTE (.)
                 [!provide]                        PROVIDE (edata, ABSOLUTE (.))
-                0x0000000000010740                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
-                0x0000000000010740                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
+                0x0000000000010758                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
+                0x0000000000010758                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
 
-.bss            0x0000000000010744       0x14
-                0x0000000000010744                __bss_start = ABSOLUTE (.)
+.bss            0x000000000001075c       0x14
+                0x000000000001075c                __bss_start = ABSOLUTE (.)
                 [!provide]                        PROVIDE (__sbss_start, ABSOLUTE (.))
                 [!provide]                        PROVIDE (___sbss_start, ABSOLUTE (.))
  *(.dynsbss)
  *(.sbss .sbss.* .gnu.linkonce.sb.*)
  .sbss._randbits
-                0x0000000000010744        0x8 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
- .sbss          0x000000000001074c        0xc ../test_bsp//libhal_bsp.a(alt_main.o)
-                0x000000000001074c                alt_envp
-                0x0000000000010750                alt_argv
-                0x0000000000010754                alt_argc
+                0x000000000001075c        0x8 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
+ .sbss          0x0000000000010764        0xc ../test_bsp//libhal_bsp.a(alt_main.o)
+                0x0000000000010764                alt_envp
+                0x0000000000010768                alt_argv
+                0x000000000001076c                alt_argc
  *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
  *(.scommon)
                 [!provide]                        PROVIDE (__sbss_end, ABSOLUTE (.))
                 [!provide]                        PROVIDE (___sbss_end, ABSOLUTE (.))
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x0000000000010758        0x0 ../test_bsp//obj/HAL/src/crt0.o
- .bss           0x0000000000010758        0x0 obj/default/hello_world_small.o
- .bss           0x0000000000010758        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
- .bss           0x0000000000010758        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
- .bss           0x0000000000010758        0x0 ../test_bsp//libhal_bsp.a(alt_load.o)
- .bss           0x0000000000010758        0x0 ../test_bsp//libhal_bsp.a(alt_main.o)
- .bss           0x0000000000010758        0x0 ../test_bsp//libhal_bsp.a(alt_putstr.o)
- .bss           0x0000000000010758        0x0 ../test_bsp//libhal_bsp.a(alt_usleep.o)
- .bss           0x0000000000010758        0x0 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
- .bss           0x0000000000010758        0x0 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .bss           0x0000000000010758        0x0 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
- .bss           0x0000000000010758        0x0 ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .bss           0x0000000000010758        0x0 ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .bss           0x0000000000010758        0x0 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .bss           0x0000000000010758        0x0 ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
- .bss           0x0000000000010758        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
- .bss           0x0000000000010758        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
+ .bss           0x0000000000010770        0x0 ../test_bsp//obj/HAL/src/crt0.o
+ .bss           0x0000000000010770        0x0 obj/default/hello_world_small.o
+ .bss           0x0000000000010770        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
+ .bss           0x0000000000010770        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
+ .bss           0x0000000000010770        0x0 ../test_bsp//libhal_bsp.a(alt_load.o)
+ .bss           0x0000000000010770        0x0 ../test_bsp//libhal_bsp.a(alt_main.o)
+ .bss           0x0000000000010770        0x0 ../test_bsp//libhal_bsp.a(alt_putstr.o)
+ .bss           0x0000000000010770        0x0 ../test_bsp//libhal_bsp.a(alt_usleep.o)
+ .bss           0x0000000000010770        0x0 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
+ .bss           0x0000000000010770        0x0 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .bss           0x0000000000010770        0x0 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .bss           0x0000000000010770        0x0 ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x0000000000010770        0x0 ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x0000000000010770        0x0 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .bss           0x0000000000010770        0x0 ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .bss           0x0000000000010770        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
+ .bss           0x0000000000010770        0x0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
  *(COMMON)
-                0x0000000000010758                . = ALIGN (0x4)
-                0x0000000000010758                __bss_end = ABSOLUTE (.)
+                0x0000000000010770                . = ALIGN (0x4)
+                0x0000000000010770                __bss_end = ABSOLUTE (.)
 
 .onchip_memory2_0
-                0x0000000000010758        0x0
+                0x0000000000010770        0x0
                 [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_start, ABSOLUTE (.))
  *(.onchip_memory2_0 .onchip_memory2_0. onchip_memory2_0.*)
-                0x0000000000010758                . = ALIGN (0x4)
+                0x0000000000010770                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_end, ABSOLUTE (.))
-                0x0000000000010758                _end = ABSOLUTE (.)
-                0x0000000000010758                end = ABSOLUTE (.)
-                0x0000000000010758                __alt_stack_base = ABSOLUTE (.)
+                0x0000000000010770                _end = ABSOLUTE (.)
+                0x0000000000010770                end = ABSOLUTE (.)
+                0x0000000000010770                __alt_stack_base = ABSOLUTE (.)
                 [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_load_addr, LOADADDR (.onchip_memory2_0))
 
 .stab
@@ -395,84 +395,84 @@ LOAD /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x197a
+.debug_info     0x0000000000000000     0x1992
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000       0x58 ../test_bsp//obj/HAL/src/crt0.o
- .debug_info    0x0000000000000058      0x1bd obj/default/hello_world_small.o
- .debug_info    0x0000000000000215      0x5ec /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
- .debug_info    0x0000000000000801      0x1eb /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
- .debug_info    0x00000000000009ec      0x1c9 ../test_bsp//libhal_bsp.a(alt_load.o)
- .debug_info    0x0000000000000bb5      0x169 ../test_bsp//libhal_bsp.a(alt_main.o)
- .debug_info    0x0000000000000d1e      0x13a ../test_bsp//libhal_bsp.a(alt_putstr.o)
- .debug_info    0x0000000000000e58       0xd1 ../test_bsp//libhal_bsp.a(alt_usleep.o)
- .debug_info    0x0000000000000f29      0x185 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
- .debug_info    0x00000000000010ae      0x197 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_info    0x0000000000001245       0xd8 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
- .debug_info    0x000000000000131d       0xa6 ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_info    0x00000000000013c3       0xb8 ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .debug_info    0x000000000000147b       0x92 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_info    0x000000000000150d       0xde ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
- .debug_info    0x00000000000015eb       0xc9 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
- .debug_info    0x00000000000016b4      0x2c6 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
+ .debug_info    0x0000000000000058      0x1d5 obj/default/hello_world_small.o
+ .debug_info    0x000000000000022d      0x5ec /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
+ .debug_info    0x0000000000000819      0x1eb /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
+ .debug_info    0x0000000000000a04      0x1c9 ../test_bsp//libhal_bsp.a(alt_load.o)
+ .debug_info    0x0000000000000bcd      0x169 ../test_bsp//libhal_bsp.a(alt_main.o)
+ .debug_info    0x0000000000000d36      0x13a ../test_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_info    0x0000000000000e70       0xd1 ../test_bsp//libhal_bsp.a(alt_usleep.o)
+ .debug_info    0x0000000000000f41      0x185 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_info    0x00000000000010c6      0x197 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_info    0x000000000000125d       0xd8 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .debug_info    0x0000000000001335       0xa6 ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_info    0x00000000000013db       0xb8 ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_info    0x0000000000001493       0x92 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_info    0x0000000000001525       0xde ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_info    0x0000000000001603       0xc9 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
+ .debug_info    0x00000000000016cc      0x2c6 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
 
-.debug_abbrev   0x0000000000000000      0xc2f
+.debug_abbrev   0x0000000000000000      0xc2d
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000       0x12 ../test_bsp//obj/HAL/src/crt0.o
- .debug_abbrev  0x0000000000000012       0xcc obj/default/hello_world_small.o
- .debug_abbrev  0x00000000000000de      0x1a0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
- .debug_abbrev  0x000000000000027e       0xef /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
- .debug_abbrev  0x000000000000036d       0xd8 ../test_bsp//libhal_bsp.a(alt_load.o)
- .debug_abbrev  0x0000000000000445       0xee ../test_bsp//libhal_bsp.a(alt_main.o)
- .debug_abbrev  0x0000000000000533       0xd3 ../test_bsp//libhal_bsp.a(alt_putstr.o)
- .debug_abbrev  0x0000000000000606       0x8d ../test_bsp//libhal_bsp.a(alt_usleep.o)
- .debug_abbrev  0x0000000000000693      0x107 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
- .debug_abbrev  0x000000000000079a       0xd5 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_abbrev  0x000000000000086f       0x8d ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
- .debug_abbrev  0x00000000000008fc       0x5a ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_abbrev  0x0000000000000956       0x6f ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .debug_abbrev  0x00000000000009c5       0x42 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_abbrev  0x0000000000000a07       0x9b ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
- .debug_abbrev  0x0000000000000aa2       0x7f /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
- .debug_abbrev  0x0000000000000b21      0x10e /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
+ .debug_abbrev  0x0000000000000012       0xca obj/default/hello_world_small.o
+ .debug_abbrev  0x00000000000000dc      0x1a0 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
+ .debug_abbrev  0x000000000000027c       0xef /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
+ .debug_abbrev  0x000000000000036b       0xd8 ../test_bsp//libhal_bsp.a(alt_load.o)
+ .debug_abbrev  0x0000000000000443       0xee ../test_bsp//libhal_bsp.a(alt_main.o)
+ .debug_abbrev  0x0000000000000531       0xd3 ../test_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_abbrev  0x0000000000000604       0x8d ../test_bsp//libhal_bsp.a(alt_usleep.o)
+ .debug_abbrev  0x0000000000000691      0x107 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_abbrev  0x0000000000000798       0xd5 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_abbrev  0x000000000000086d       0x8d ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .debug_abbrev  0x00000000000008fa       0x5a ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_abbrev  0x0000000000000954       0x6f ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_abbrev  0x00000000000009c3       0x42 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_abbrev  0x0000000000000a05       0x9b ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_abbrev  0x0000000000000aa0       0x7f /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
+ .debug_abbrev  0x0000000000000b1f      0x10e /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
 
-.debug_line     0x0000000000000000      0xe11
+.debug_line     0x0000000000000000      0xe25
  *(.debug_line)
  .debug_line    0x0000000000000000       0x72 ../test_bsp//obj/HAL/src/crt0.o
- .debug_line    0x0000000000000072      0x1b1 obj/default/hello_world_small.o
- .debug_line    0x0000000000000223      0x1e8 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
- .debug_line    0x000000000000040b       0x86 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
- .debug_line    0x0000000000000491       0xa4 ../test_bsp//libhal_bsp.a(alt_load.o)
- .debug_line    0x0000000000000535       0xbd ../test_bsp//libhal_bsp.a(alt_main.o)
- .debug_line    0x00000000000005f2       0xae ../test_bsp//libhal_bsp.a(alt_putstr.o)
- .debug_line    0x00000000000006a0       0xdd ../test_bsp//libhal_bsp.a(alt_usleep.o)
- .debug_line    0x000000000000077d      0x101 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
- .debug_line    0x000000000000087e       0xf0 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_line    0x000000000000096e       0xb3 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
- .debug_line    0x0000000000000a21       0x5a ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_line    0x0000000000000a7b       0x6e ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .debug_line    0x0000000000000ae9       0x50 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_line    0x0000000000000b39       0x7d ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
- .debug_line    0x0000000000000bb6      0x159 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
- .debug_line    0x0000000000000d0f      0x102 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
+ .debug_line    0x0000000000000072      0x1c5 obj/default/hello_world_small.o
+ .debug_line    0x0000000000000237      0x1e8 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
+ .debug_line    0x000000000000041f       0x86 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
+ .debug_line    0x00000000000004a5       0xa4 ../test_bsp//libhal_bsp.a(alt_load.o)
+ .debug_line    0x0000000000000549       0xbd ../test_bsp//libhal_bsp.a(alt_main.o)
+ .debug_line    0x0000000000000606       0xae ../test_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_line    0x00000000000006b4       0xdd ../test_bsp//libhal_bsp.a(alt_usleep.o)
+ .debug_line    0x0000000000000791      0x101 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_line    0x0000000000000892       0xf0 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_line    0x0000000000000982       0xb3 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .debug_line    0x0000000000000a35       0x5a ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x0000000000000a8f       0x6e ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x0000000000000afd       0x50 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_line    0x0000000000000b4d       0x7d ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_line    0x0000000000000bca      0x159 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
+ .debug_line    0x0000000000000d23      0x102 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
 
-.debug_frame    0x0000000000000000      0x2c0
+.debug_frame    0x0000000000000000      0x2c4
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x38 obj/default/hello_world_small.o
- .debug_frame   0x0000000000000038       0x40 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
- .debug_frame   0x0000000000000078       0x20 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
- .debug_frame   0x0000000000000098       0x30 ../test_bsp//libhal_bsp.a(alt_load.o)
- .debug_frame   0x00000000000000c8       0x2c ../test_bsp//libhal_bsp.a(alt_main.o)
- .debug_frame   0x00000000000000f4       0x30 ../test_bsp//libhal_bsp.a(alt_putstr.o)
- .debug_frame   0x0000000000000124       0x20 ../test_bsp//libhal_bsp.a(alt_usleep.o)
- .debug_frame   0x0000000000000144       0x3c ../test_bsp//libhal_bsp.a(alt_sys_init.o)
- .debug_frame   0x0000000000000180       0x20 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_frame   0x00000000000001a0       0x30 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
- .debug_frame   0x00000000000001d0       0x20 ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_frame   0x00000000000001f0       0x20 ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
- .debug_frame   0x0000000000000210       0x20 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
- .debug_frame   0x0000000000000230       0x20 ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
- .debug_frame   0x0000000000000250       0x20 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
- .debug_frame   0x0000000000000270       0x50 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
+ .debug_frame   0x0000000000000000       0x3c obj/default/hello_world_small.o
+ .debug_frame   0x000000000000003c       0x40 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
+ .debug_frame   0x000000000000007c       0x20 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
+ .debug_frame   0x000000000000009c       0x30 ../test_bsp//libhal_bsp.a(alt_load.o)
+ .debug_frame   0x00000000000000cc       0x2c ../test_bsp//libhal_bsp.a(alt_main.o)
+ .debug_frame   0x00000000000000f8       0x30 ../test_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_frame   0x0000000000000128       0x20 ../test_bsp//libhal_bsp.a(alt_usleep.o)
+ .debug_frame   0x0000000000000148       0x3c ../test_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_frame   0x0000000000000184       0x20 ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_frame   0x00000000000001a4       0x30 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .debug_frame   0x00000000000001d4       0x20 ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_frame   0x00000000000001f4       0x20 ../test_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_frame   0x0000000000000214       0x20 ../test_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_frame   0x0000000000000234       0x20 ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_frame   0x0000000000000254       0x20 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
+ .debug_frame   0x0000000000000274       0x50 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
 
 .debug_str      0x0000000000000000      0xb97
  *(.debug_str)
@@ -509,19 +509,19 @@ LOAD /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/
  .debug_str     0x0000000000000b1b       0x7c /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
                                         0x1b9 (size before relaxing)
 
-.debug_loc      0x0000000000000000      0x929
+.debug_loc      0x0000000000000000      0x91e
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x126 obj/default/hello_world_small.o
- .debug_loc     0x0000000000000126      0x12d /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
- .debug_loc     0x0000000000000253       0x37 ../test_bsp//libhal_bsp.a(alt_putstr.o)
- .debug_loc     0x000000000000028a       0x21 ../test_bsp//libhal_bsp.a(alt_usleep.o)
- .debug_loc     0x00000000000002ab       0x21 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
- .debug_loc     0x00000000000002cc       0x8b ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_loc     0x0000000000000357       0x75 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
- .debug_loc     0x00000000000003cc       0x1f ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_loc     0x00000000000003eb       0x52 ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
- .debug_loc     0x000000000000043d       0x1e /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
- .debug_loc     0x000000000000045b      0x4ce /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
+ .debug_loc     0x0000000000000000      0x11b obj/default/hello_world_small.o
+ .debug_loc     0x000000000000011b      0x12d /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
+ .debug_loc     0x0000000000000248       0x37 ../test_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_loc     0x000000000000027f       0x21 ../test_bsp//libhal_bsp.a(alt_usleep.o)
+ .debug_loc     0x00000000000002a0       0x21 ../test_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_loc     0x00000000000002c1       0x8b ../test_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_loc     0x000000000000034c       0x75 ../test_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .debug_loc     0x00000000000003c1       0x1f ../test_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_loc     0x00000000000003e0       0x52 ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_loc     0x0000000000000432       0x1e /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
+ .debug_loc     0x0000000000000450      0x4ce /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -552,12 +552,12 @@ LOAD /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/
                 [!provide]                        PROVIDE (__alt_heap_limit, 0x20000)
 OUTPUT(test.elf elf32-littlenios2)
 
-.debug_ranges   0x0000000000000000      0x128
+.debug_ranges   0x0000000000000000      0x168
  .debug_ranges  0x0000000000000000       0x20 ../test_bsp//obj/HAL/src/crt0.o
- .debug_ranges  0x0000000000000020       0x10 obj/default/hello_world_small.o
- .debug_ranges  0x0000000000000030       0x18 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
- .debug_ranges  0x0000000000000048       0x18 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
- .debug_ranges  0x0000000000000060       0x48 ../test_bsp//libhal_bsp.a(alt_load.o)
- .debug_ranges  0x00000000000000a8       0x10 ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
- .debug_ranges  0x00000000000000b8       0x10 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
- .debug_ranges  0x00000000000000c8       0x60 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)
+ .debug_ranges  0x0000000000000020       0x50 obj/default/hello_world_small.o
+ .debug_ranges  0x0000000000000070       0x18 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-rand.o)
+ .debug_ranges  0x0000000000000088       0x18 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(_muldi3.o)
+ .debug_ranges  0x00000000000000a0       0x48 ../test_bsp//libhal_bsp.a(alt_load.o)
+ .debug_ranges  0x00000000000000e8       0x10 ../test_bsp//libhal_bsp.a(alt_icache_flush.o)
+ .debug_ranges  0x00000000000000f8       0x10 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/libsmallc.a(lib_a-strlen.o)
+ .debug_ranges  0x0000000000000108       0x60 /usr/local/3rdparty/altera/18.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/libgcc.a(lib2-divmod.o)

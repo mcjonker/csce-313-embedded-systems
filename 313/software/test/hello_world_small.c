@@ -94,7 +94,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-// Needed Definitions
+// * * * Definitions * * *
 // IOWR - IO Write Register
 // IORD - IO Read Data
 // SYSTEM_MODES_BASE - switches
@@ -104,8 +104,6 @@
 // x = IORD_ALTERA_AVALON_PIO_DATA(baseAddress);
 // recording in BB if needed
 // alt_putstr(""); -> altera push string
-
-
 
 int main() {
   alt_putstr("Hunter Frady and Mitchell Jonker - Project2 - CSCE 313\n");
@@ -119,13 +117,19 @@ int main() {
 	alt_u8 rand_var = 0x00;
 
   // declare number of random patterns as int. You can initialize it with any number you wish:
-	int num_pattern = 5;
+	int num_pattern = 2; //5
 
   /* Event loop never exits. */
   while (1) {
 
     // read the mode values from system_modes using the function:
     mode = IORD_ALTERA_AVALON_PIO_DATA(SYSTEM_MODES_BASE);
+
+    if (mode == 0x00) {
+    	IOWR_ALTERA_AVALON_PIO_DATA(SYSTEM_COUNTER_BASE, 0x00);
+    	IOWR_ALTERA_AVALON_PIO_DATA(RANDOM_PATTERN_BASE, 0x00000);
+
+    }
 
     // check if the mode is 1 so all LEDs must light up:
     // Both red and green LEDs light up
@@ -134,6 +138,7 @@ int main() {
       // Example to how light Decoder_output LEDs. Do the same to light other leds
       IOWR_ALTERA_AVALON_PIO_DATA(SYSTEM_COUNTER_BASE, 0xFF);
       IOWR_ALTERA_AVALON_PIO_DATA(RANDOM_PATTERN_BASE, 0xFFFFF);
+      counter = 0x00;
 
     } // end mode 0x1
 
@@ -144,12 +149,12 @@ int main() {
 		alt_putstr("System Counter Mode\n");
 
       // First, reset all LEDs as shown in the example below
-	  IOWR_ALTERA_AVALON_PIO_DATA(RANDOM_PATTERN_BASE , 0x00000);
-	  IOWR_ALTERA_AVALON_PIO_DATA(SYSTEM_COUNTER_BASE , 0x00);
+	  //IOWR_ALTERA_AVALON_PIO_DATA(RANDOM_PATTERN_BASE , 0x00000);
+	  //IOWR_ALTERA_AVALON_PIO_DATA(SYSTEM_COUNTER_BASE , 0x00);
 
 
       // Counter starts counting from 0 (0x00) to 255 (0xFF)
-      for (int i=0; i<256; i++) {
+      for (int i=0; i<255; i++) {
 
         // always keep checking If the mode values changed. If mode changes, break the loop. See the below code
         mode = IORD_ALTERA_AVALON_PIO_DATA(SYSTEM_MODES_BASE);
@@ -165,10 +170,10 @@ int main() {
         // time the display period of each counter value using usleep()
         // sleep time for 1 million micro seconds
         // adjust as necessary
-        usleep(1000000);
+        usleep(500000);
 
       } // end for loop
-      counter = 0x00;
+      //counter = 0x00;
 	} // end mode 0x2
 
     // check if the mode is 3 so random pattern starts:
@@ -178,20 +183,20 @@ int main() {
       alt_putstr("Random Pattern Mode\n");
 
       // First, reset all LEDs as shown in the example below:
-      IOWR_ALTERA_AVALON_PIO_DATA(RANDOM_PATTERN_BASE , 0x00000);
-      IOWR_ALTERA_AVALON_PIO_DATA(SYSTEM_COUNTER_BASE , 0x00);
+      //IOWR_ALTERA_AVALON_PIO_DATA(RANDOM_PATTERN_BASE , 0x00000);
+      //IOWR_ALTERA_AVALON_PIO_DATA(SYSTEM_COUNTER_BASE , 0x00);
 
 
       for (int i=0; i<num_pattern; i++) {
 
         // always keep checking If the mode values changed. If mode changes, break the loop. (as code shown in mode=1 code):
-        if (mode != 3) {
+        if (mode != 0x3) {
           break;
         }
         // generate random pattern using rand() function:
         rand_var = rand();
         // display the random value onto the random-pattern LEDs using IOWR_ALTERA_AVALON_PIO_DATA:
-        IOWR_ALTERA_AVALON_PIO_DATA(RANDOM_PATTERN_BASE, rand_var);//green LEDS
+        IOWR_ALTERA_AVALON_PIO_DATA(RANDOM_PATTERN_BASE, rand_var); // Green LEDS
         // time the display period of each counter value using usleep()
         usleep(1000000); // time for 1 million micro seconds
 
