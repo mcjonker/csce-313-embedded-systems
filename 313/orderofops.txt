@@ -1,0 +1,10 @@
+- compile hardware side of project (HDL + more)
+- program the board (in Programmer)
+- software side
+- generate BSP file
+- clean and build project
+- "Run As NIOS Hardware"
+
+
+** if "Run As" tab only shows "Run as C/C++ Application" then
+** you have an issue. clean the project and rebuild. 
