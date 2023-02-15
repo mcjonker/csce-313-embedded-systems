@@ -1,0 +1,6 @@
+- compile hardware side of project
+- program the board (in Programmer)
+- software side
+- generate BSP file
+- clean and build project
+- run as NIOS Hardware
