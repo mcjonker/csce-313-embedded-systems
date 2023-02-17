@@ -17,7 +17,7 @@ module p1 (
 		.clk_clk       (CLOCK_50),       //    clk.clk
 		.modes_export  (SW[1:0]),  //  modes.export
 		.bcdin_export  (SW[5:2]),  //  modes.export
-		.spcont_export  (SW[7]),  //  modes.export
+		.spcont_export  (SW[6]),  //  modes.export
 		//.mode_export  (SW[1:0]),  //  modes.export
 		.reset_reset_n (KEY[0]), //  reset.reset_n
 		.seg0_export   (HEX0),   //   seg0.export

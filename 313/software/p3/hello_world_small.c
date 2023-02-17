@@ -30,7 +30,7 @@
 // alt_putstr(""); -> altera push string
 // * * * * * * * * * * * *
 
-alt_u8 bin2seg(alt_u8 bcd_input) {
+alt_u8 bcdEncode(alt_u8 bcd_input) {
   switch (bcd_input) {
     // This function encodes the switch input
     // to display the correct # on the 7seg
@@ -63,7 +63,7 @@ int main() {
 	alt_u8 speed_swc = 0; // 8-bit speed condition variable
 	alt_u8 bcd_input = 0; // 8-bit bcd input variable
 	int delay = 300000; // usleep variable
-  int counter_var = 0;
+	int counter_var = 0;
 
 	/* Event loop never exits. */
 	while (1) {
@@ -72,59 +72,59 @@ int main() {
     speed_swc = IORD_ALTERA_AVALON_PIO_DATA(SPEED_CONTROLLER_BASE); // speed switch input
     bcd_input = IORD_ALTERA_AVALON_PIO_DATA(BCD_INPUT_BASE); // 4 bcd_input switches input
 
-		// speed controller switch
+	// speed controller switch
     // (checking at top of loop so all functions follow switch-defiled speed)
-		if (speed_swc == 0x1) {
+	if (speed_swc == 0x1) {
       alt_putstr("Speed Updated to: 300ms");
-			delay = 300000;
+      delay = 300000;
       
-		} else { // assign default speed
+	} else { // assign default speed
       alt_putstr("Speed Updated to: 125ms");
       delay = 125000;
       
 		}
 		if (mode == 0x00) {
-      // Turn off all 7-segment displays
+			// Turn off all 7-segment displays
 			alt_putstr("Operations Reset\n");
-      counter_var = 0;
-      rand_var = 0;
-      IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT0_BASE, 0xFF);
-      IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT1_BASE, 0xFF);
-      IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT2_BASE, 0xFF);
-      IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT3_BASE, 0xFF);
-      IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT4_BASE, 0xFF);
+			counter_var = 0;
+			rand_var = 0;
+			IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT0_BASE, 0xFF);
+			IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT1_BASE, 0xFF);
+			IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT2_BASE, 0xFF);
+			IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT3_BASE, 0xFF);
+			IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT4_BASE, 0xFF);
       
 		} // end mode 0x0
 		if (mode == 0x1) {
 		  alt_putstr("Decoder Mode\n");
-      // if mode changes to 1, counter for mode 2 restarts
-      // set counter to 0, and display zeros on the displays
-      counter_var = 0;
-      IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT0_BASE, 0xC0); // or 0xFF?
-      IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT1_BASE, 0xC0); // or 0xFF?
+		  // if mode changes to 1, counter for mode 2 restarts
+		  // set counter to 0, and display zeros on the displays
+		  counter_var = 0;
+		  IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT0_BASE, 0xC0); // or 0xFF?
+		  IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT1_BASE, 0xC0); // or 0xFF?
       
-      // Send encoded input to 7-segment display
-      IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT4_BASE, bcdEncode(bcd_input));
+		  // Send encoded input to 7-segment display
+		  IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT4_BASE, bcdEncode(bcd_input));
       
 		} // end mode 0x1
 		if (mode == 0x2) {
 			alt_putstr("Incrementing Counter Mode\n");
-      // increment values to display on 7-segs
-      // using bitwise operator ">>" for a rightward shift
-      // this makes sure the 10's place 7-seg doesnt increment for every cycle.
-      alt_u8 seg0_value = counter_var & 0x0F;
-      alt_u8 seg1_value = (counter_var & 0xF0) >> 4;
-      IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT0_BASE, bcdEncode(seg0_value));
-      IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT1_BASE, bcdEncode(seg1_value));
-      // Reset counter if max is reached.
+			// increment values to display on 7-segs
+			// using bitwise operator ">>" for a rightward shift
+			// this makes sure the 10's place 7-seg doesnt increment for every cycle.
+			alt_u8 seg0_value = counter_var & 0x0F;
+			alt_u8 seg1_value = (counter_var & 0xF0) >> 4;
+			IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT0_BASE, bcdEncode(seg0_value));
+			IOWR_ALTERA_AVALON_PIO_DATA(SEGMENT1_BASE, bcdEncode(seg1_value));
+			// Reset counter if max is reached.
       if (counter_var == 255) { // 0xFF
-        counter_var = 0;
+    	  counter_var = 0;
       } else {
-        counter_var++;
+    	  counter_var++;
       }
       usleep(delay); // speed setting
       
-		} // end mode 0x2
+	} // end mode 0x2
 
     if (mode == 0x3) {
       alt_putstr("Random Pattern Mode\n");
