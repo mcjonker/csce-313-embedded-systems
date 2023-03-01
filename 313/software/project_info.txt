@@ -9,5 +9,6 @@ test_bsp
 
 
 Project 3 - 
-p3
-p3_bsp
+p3_fix2
+p3_fix2_bsp
+
