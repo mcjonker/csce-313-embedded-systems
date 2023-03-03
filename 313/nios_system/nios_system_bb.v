@@ -3,22 +3,58 @@ module nios_system (
 	clk_clk,
 	modes_export,
 	reset_reset_n,
-	seg0_export,
-	seg1_export,
-	seg2_export,
-	seg3_export,
-	seg4_export,
-	bcdin_export,
-	spcont_export);	
+	sdram_addr,
+	sdram_ba,
+	sdram_cas_n,
+	sdram_cke,
+	sdram_cs_n,
+	sdram_dq,
+	sdram_dqm,
+	sdram_ras_n,
+	sdram_we_n,
+	vga_CLK,
+	vga_HS,
+	vga_VS,
+	vga_BLANK,
+	vga_SYNC,
+	vga_R,
+	vga_G,
+	vga_B,
+	sram_DQ,
+	sram_ADDR,
+	sram_LB_N,
+	sram_UB_N,
+	sram_CE_N,
+	sram_OE_N,
+	sram_WE_N,
+	sdram_clk_clk);	
 
 	input		clk_clk;
 	input	[1:0]	modes_export;
 	input		reset_reset_n;
-	output	[7:0]	seg0_export;
-	output	[7:0]	seg1_export;
-	output	[7:0]	seg2_export;
-	output	[7:0]	seg3_export;
-	output	[7:0]	seg4_export;
-	input	[3:0]	bcdin_export;
-	input		spcont_export;
+	output	[12:0]	sdram_addr;
+	output	[1:0]	sdram_ba;
+	output		sdram_cas_n;
+	output		sdram_cke;
+	output		sdram_cs_n;
+	inout	[31:0]	sdram_dq;
+	output	[3:0]	sdram_dqm;
+	output		sdram_ras_n;
+	output		sdram_we_n;
+	output		vga_CLK;
+	output		vga_HS;
+	output		vga_VS;
+	output		vga_BLANK;
+	output		vga_SYNC;
+	output	[7:0]	vga_R;
+	output	[7:0]	vga_G;
+	output	[7:0]	vga_B;
+	inout	[15:0]	sram_DQ;
+	output	[19:0]	sram_ADDR;
+	output		sram_LB_N;
+	output		sram_UB_N;
+	output		sram_CE_N;
+	output		sram_OE_N;
+	output		sram_WE_N;
+	output		sdram_clk_clk;
 endmodule

@@ -1,6 +1,6 @@
 // CSCE-313 Mitchell Jonker & Hunter Frady Project 3
 
-// p3
+// p3_fix2
 
 // Altera and hardware libraries
 #include "sys/alt_stdio.h"

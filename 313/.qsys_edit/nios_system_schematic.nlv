@@ -1,18 +1,36 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst nios_system.nios2_gen2_0 -pg 1 -lvl 2 -y 90
-preplace inst nios_system.jtag_uart_0 -pg 1 -lvl 3 -y 130
-preplace inst nios_system.nios2_gen2_0.clock_bridge -pg 1
+preplace inst nios_system.video_scaler -pg 1 -lvl 2 -y 1490
+preplace inst nios_system.sys_sdram_pll -pg 1 -lvl 2 -y 320
+preplace inst nios_system.sdram_controller -pg 1 -lvl 3 -y 400
+preplace inst nios_system.jtag_uart_0 -pg 1 -lvl 3 -y 500
+preplace inst nios_system.video_rgb_resampler_0 -pg 1 -lvl 2 -y 1390
+preplace inst nios_system.dma_buffer -pg 1 -lvl 1 -y 720
 preplace inst nios_system -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst nios_system.onchip_memory2_0 -pg 1 -lvl 3 -y 50
-preplace inst nios_system.nios2_gen2_0.cpu -pg 1
-preplace inst nios_system.nios2_gen2_0.reset_bridge -pg 1
-preplace inst nios_system.clk_0 -pg 1 -lvl 1 -y 110
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)nios_system.reset) 1 0 1 NJ
-preplace netloc FAN_OUT<net_container>nios_system</net_container>(SLAVE)jtag_uart_0.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)onchip_memory2_0.clk1,(MASTER)clk_0.clk) 1 1 2 260 30 700
-preplace netloc INTERCONNECT<net_container>nios_system</net_container>(MASTER)nios2_gen2_0.instruction_master,(SLAVE)onchip_memory2_0.s1,(SLAVE)nios2_gen2_0.debug_mem_slave,(MASTER)nios2_gen2_0.data_master,(SLAVE)jtag_uart_0.avalon_jtag_slave) 1 1 2 300 230 680
-preplace netloc FAN_OUT<net_container>nios_system</net_container>(SLAVE)nios2_gen2_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)jtag_uart_0.reset) 1 1 2 280 50 660
-preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)clk_0.clk_in,(SLAVE)nios_system.clk) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>nios_system</net_container>(MASTER)nios2_gen2_0.irq,(SLAVE)jtag_uart_0.irq) 1 2 1 N
-levelinfo -pg 1 0 50 900
-levelinfo -hier nios_system 60 90 420 750 890
+preplace inst nios_system.video_character_buffer_with_dma_0 -pg 1 -lvl 1 -y 1270
+preplace inst nios_system.sys_sdram_pll.reset_from_locked -pg 1
+preplace inst nios_system.video_pll_0 -pg 1 -lvl 1 -y 1400
+preplace inst nios_system.sys_sdram_pll.sys_pll -pg 1
+preplace inst nios_system.clock_source_0 -pg 1 -lvl 1 -y 320
+preplace inst nios_system.processor.clock_bridge -pg 1
+preplace inst nios_system.clock_source_1 -pg 1 -lvl 3 -y 340
+preplace inst nios_system.processor.reset_bridge -pg 1
+preplace inst nios_system.video_alpha_blender -pg 1 -lvl 2 -y 1290
+preplace inst nios_system.system_modes -pg 1 -lvl 3 -y 1130
+preplace inst nios_system.sram_controller -pg 1 -lvl 1 -y 800
+preplace inst nios_system.vga -pg 1 -lvl 1 -y 1170
+preplace inst nios_system.processor -pg 1 -lvl 3 -y 50
+preplace inst nios_system.video_pll_0.video_pll -pg 1
+preplace inst nios_system.video_dual_clock_buffer_0 -pg 1 -lvl 2 -y 1170
+preplace inst nios_system.processor.cpu -pg 1
+preplace inst nios_system.video_pll_0.reset_from_locked -pg 1
+preplace netloc POINT_TO_POINT<net_container>nios_system</net_container>(MASTER)processor.debug_reset_request,(SLAVE)processor.reset) 1 2 2 930 210 1290
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.clock_source_0,(SLAVE)clock_source_0.clk_in) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>nios_system</net_container>(SLAVE)clock_source_1.clk_in,(MASTER)sys_sdram_pll.sdram_clk) 1 2 1 N
+preplace netloc POINT_TO_POINT<net_container>nios_system</net_container>(MASTER)clock_source_0.clk,(SLAVE)sys_sdram_pll.ref_clk) 1 1 1 N
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)system_modes.external_connection,(SLAVE)nios_system.modes) 1 0 3 NJ 1160 NJ 1160 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)clock_source_0.clk_in_reset,(SLAVE)nios_system.reset) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>nios_system</net_container>(SLAVE)sys_sdram_pll.ref_reset,(SLAVE)clock_source_1.clk_in_reset,(MASTER)sys_sdram_pll.reset_source) 1 1 2 500 280 890
+preplace netloc INTERCONNECT<net_container>nios_system</net_container>(MASTER)processor.data_master,(MASTER)processor.instruction_master,(SLAVE)processor.debug_mem_slave,(SLAVE)sdram_controller.s1) 1 2 2 910 190 1310
+levelinfo -pg 1 0 100 1350
+levelinfo -hier nios_system 110 190 580 1050 1330
