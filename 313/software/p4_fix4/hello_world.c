@@ -24,9 +24,7 @@ void displayScaledImage(float f) {
 		}
 	}
 }
-
 int main() {
-
 	// Declare the mode variable as alt_u8 and initialize with 0
 	alt_putstr("Hunter Frady and Mitchell Jonker - Project 3 - CSCE 313\n");
 	alt_u8 mode = 0; // 8-bit mode variable
@@ -39,16 +37,18 @@ int main() {
 	// check if pixel buffer array contains the image code (part 6 of assignment sheet)
 	if(!my_pixel_buffer) {
 		printf("Error opening pixel buffer\n");
+		// Exit/return -1?
 	}
 
 	// clear the screen (part 7 of assignment sheet)
 	clearScreen();
 
-  while (1) {
+  while (1) { // operation loop
 
 	mode = IORD_ALTERA_AVALON_PIO_DATA(SYSTEM_MODES_BASE); // mode switches input
 
 	if (mode = 0x00) {
+		alt_putstr("Mode 0: Display image at 1.0 Scale\n");
 		// display image at 1.0 scale
 		scale = 1.0;
 		clearScreen();
@@ -57,6 +57,7 @@ int main() {
 	} // end of mode 0
 
 	if (mode == 0x01) {
+		alt_putstr("Mode 1: Display image at 0.5 Scale\n");
 		// display image at 0.5 scale
 		scale = 0.5;
 		clearScreen();
@@ -66,6 +67,7 @@ int main() {
 
 	// check the mode value. If mode is 2.
 	if (mode == 0x02) {
+		alt_putstr("Mode 0: Display image at 2.0 Scale\n");
 		// display image at 2.0 scale
 		scale = 2.0;
 		clearScreen();
@@ -75,8 +77,9 @@ int main() {
 
 	// check the mode value. If mode is 3.  print the message "Video message" on the console
 	if (mode == 0x03) {
-	   clearScreen();
-	   alt_putstr("Video project message\n");
+		alt_putstr("Mode 3 Enabled\n");
+		alt_putstr("Video project\n");
+		clearScreen();
 
 	} // end of mode 3
 
