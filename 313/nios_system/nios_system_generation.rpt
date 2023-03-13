@@ -1,5 +1,5 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate /acct/mjonker/313/nios_system.qsys --block-symbol-file --output-directory=/acct/mjonker/313/nios_system --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate /acct/mjonker/csce-313-embedded-systems/313/nios_system.qsys --block-symbol-file --output-directory=/acct/mjonker/csce-313-embedded-systems/313/nios_system --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading 313/nios_system.qsys
 Progress: Reading input file
 Progress: Adding clock_source_0 [clock_source 18.1]
@@ -51,7 +51,7 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate /acct/mjonker/313/nios_system.qsys --synthesis=VERILOG --output-directory=/acct/mjonker/313/nios_system/synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate /acct/mjonker/csce-313-embedded-systems/313/nios_system.qsys --synthesis=VERILOG --output-directory=/acct/mjonker/csce-313-embedded-systems/313/nios_system/synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading 313/nios_system.qsys
 Progress: Reading input file
 Progress: Adding clock_source_0 [clock_source 18.1]
@@ -100,43 +100,41 @@ Info: nios_system.video_character_buffer_with_dma_0: Character Resolution: 80 x 
 Info: nios_system.video_scaler: Change in Resolution: 320 x 240 -> 640 x 480
 Info: nios_system.video_scaler.avalon_scaler_source/video_alpha_blender_0.avalon_background_sink: The source has a channel signal of 2 bits, but the sink does not. Avalon-ST Adapter will be inserted.
 Info: nios_system: Generating nios_system "nios_system" for QUARTUS_SYNTH
-Info: Interconnect is inserted between master dma_buffer.avalon_pixel_dma_master and slave sram_controller.avalon_sram_slave because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
-Info: Interconnect is inserted between master dma_buffer.avalon_pixel_dma_master and slave sram_controller.avalon_sram_slave because the master has address signal 32 bit wide, but the slave is 20 bit wide.
-Info: Interconnect is inserted between master dma_buffer.avalon_pixel_dma_master and slave sram_controller.avalon_sram_slave because the master has lock signal 1 bit wide, but the slave is 0 bit wide.
-Info: Interconnect is inserted between master dma_buffer.avalon_pixel_dma_master and slave sram_controller.avalon_sram_slave because the master has readdata signal 32 bit wide, but the slave is 16 bit wide.
-Info: Inserting clock-crossing logic between cmd_demux.src0 and cmd_mux.sink0
-Info: Inserting clock-crossing logic between cmd_demux.src1 and cmd_mux_001.sink0
-Info: Inserting clock-crossing logic between cmd_demux.src2 and cmd_mux_002.sink0
-Info: Inserting clock-crossing logic between cmd_demux.src3 and cmd_mux_003.sink0
-Info: Inserting clock-crossing logic between cmd_demux.src4 and cmd_mux_004.sink0
-Info: Inserting clock-crossing logic between cmd_demux.src6 and cmd_mux_006.sink0
-Info: Inserting clock-crossing logic between rsp_demux.src0 and rsp_mux.sink0
-Info: Inserting clock-crossing logic between rsp_demux_001.src0 and rsp_mux.sink1
-Info: Inserting clock-crossing logic between rsp_demux_002.src0 and rsp_mux.sink2
-Info: Inserting clock-crossing logic between rsp_demux_003.src0 and rsp_mux.sink3
-Info: Inserting clock-crossing logic between rsp_demux_004.src0 and rsp_mux.sink4
-Info: Inserting clock-crossing logic between rsp_demux_006.src0 and rsp_mux.sink6
+Info: Inserting clock-crossing logic between cmd_demux_001.src0 and cmd_mux.sink1
+Info: Inserting clock-crossing logic between cmd_demux_001.src1 and cmd_mux_001.sink0
+Info: Inserting clock-crossing logic between cmd_demux_001.src2 and cmd_mux_002.sink0
+Info: Inserting clock-crossing logic between cmd_demux_001.src3 and cmd_mux_003.sink0
+Info: Inserting clock-crossing logic between cmd_demux_001.src4 and cmd_mux_004.sink0
+Info: Inserting clock-crossing logic between cmd_demux_001.src5 and cmd_mux_005.sink0
+Info: Inserting clock-crossing logic between cmd_demux_001.src7 and cmd_mux_007.sink0
+Info: Inserting clock-crossing logic between rsp_demux.src1 and rsp_mux_001.sink0
+Info: Inserting clock-crossing logic between rsp_demux_001.src0 and rsp_mux_001.sink1
+Info: Inserting clock-crossing logic between rsp_demux_002.src0 and rsp_mux_001.sink2
+Info: Inserting clock-crossing logic between rsp_demux_003.src0 and rsp_mux_001.sink3
+Info: Inserting clock-crossing logic between rsp_demux_004.src0 and rsp_mux_001.sink4
+Info: Inserting clock-crossing logic between rsp_demux_005.src0 and rsp_mux_001.sink5
+Info: Inserting clock-crossing logic between rsp_demux_007.src0 and rsp_mux_001.sink7
 Info: avalon_st_adapter: Inserting channel_adapter: channel_adapter_0
 Info: dma_buffer: Starting Generation of VGA Pixel Buffer
 Info: dma_buffer: "nios_system" instantiated altera_up_avalon_video_pixel_buffer_dma "dma_buffer"
 Info: dual_clock_fifo: Starting Generation of the Dual Clock Buffer
 Info: dual_clock_fifo: "nios_system" instantiated altera_up_avalon_video_dual_clock_buffer "dual_clock_fifo"
 Info: jtag: Starting RTL generation for module 'nios_system_jtag'
-Info: jtag:   Generation command is [exec /usr/local/3rdparty/altera/18.1/quartus/linux64/perl/bin/perl -I /usr/local/3rdparty/altera/18.1/quartus/linux64/perl/lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/europa -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_system_jtag --dir=/tmp/alt9419_6233974869961900797.dir/0004_jtag_gen/ --quartus_dir=/usr/local/3rdparty/altera/18.1/quartus --verilog --config=/tmp/alt9419_6233974869961900797.dir/0004_jtag_gen//nios_system_jtag_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag:   Generation command is [exec /usr/local/3rdparty/altera/18.1/quartus/linux64/perl/bin/perl -I /usr/local/3rdparty/altera/18.1/quartus/linux64/perl/lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/europa -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_system_jtag --dir=/tmp/alt9429_5695786925158968339.dir/0004_jtag_gen/ --quartus_dir=/usr/local/3rdparty/altera/18.1/quartus --verilog --config=/tmp/alt9429_5695786925158968339.dir/0004_jtag_gen//nios_system_jtag_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag: Done RTL generation for module 'nios_system_jtag'
 Info: jtag: "nios_system" instantiated altera_avalon_jtag_uart "jtag"
 Info: processor: "nios_system" instantiated altera_nios2_gen2 "processor"
 Info: rgb_resampler: Starting Generation of Video RGB Resampler
 Info: rgb_resampler: "nios_system" instantiated altera_up_avalon_video_rgb_resampler "rgb_resampler"
 Info: sdram_controller: Starting RTL generation for module 'nios_system_sdram_controller'
-Info: sdram_controller:   Generation command is [exec /usr/local/3rdparty/altera/18.1/quartus/linux64/perl/bin/perl -I /usr/local/3rdparty/altera/18.1/quartus/linux64/perl/lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/europa -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=nios_system_sdram_controller --dir=/tmp/alt9419_6233974869961900797.dir/0006_sdram_controller_gen/ --quartus_dir=/usr/local/3rdparty/altera/18.1/quartus --verilog --config=/tmp/alt9419_6233974869961900797.dir/0006_sdram_controller_gen//nios_system_sdram_controller_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram_controller:   Generation command is [exec /usr/local/3rdparty/altera/18.1/quartus/linux64/perl/bin/perl -I /usr/local/3rdparty/altera/18.1/quartus/linux64/perl/lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/europa -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=nios_system_sdram_controller --dir=/tmp/alt9429_5695786925158968339.dir/0006_sdram_controller_gen/ --quartus_dir=/usr/local/3rdparty/altera/18.1/quartus --verilog --config=/tmp/alt9429_5695786925158968339.dir/0006_sdram_controller_gen//nios_system_sdram_controller_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram_controller: Done RTL generation for module 'nios_system_sdram_controller'
 Info: sdram_controller: "nios_system" instantiated altera_avalon_new_sdram_controller "sdram_controller"
 Info: sram_controller: Starting Generation of the SRAM Controller
 Info: sram_controller: "nios_system" instantiated altera_up_avalon_sram "sram_controller"
 Info: sys_sdram_pll: "nios_system" instantiated altera_up_avalon_sys_sdram_pll "sys_sdram_pll"
 Info: system_modes: Starting RTL generation for module 'nios_system_system_modes'
-Info: system_modes:   Generation command is [exec /usr/local/3rdparty/altera/18.1/quartus/linux64/perl/bin/perl -I /usr/local/3rdparty/altera/18.1/quartus/linux64/perl/lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/europa -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_system_modes --dir=/tmp/alt9419_6233974869961900797.dir/0008_system_modes_gen/ --quartus_dir=/usr/local/3rdparty/altera/18.1/quartus --verilog --config=/tmp/alt9419_6233974869961900797.dir/0008_system_modes_gen//nios_system_system_modes_component_configuration.pl  --do_build_sim=0  ]
+Info: system_modes:   Generation command is [exec /usr/local/3rdparty/altera/18.1/quartus/linux64/perl/bin/perl -I /usr/local/3rdparty/altera/18.1/quartus/linux64/perl/lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/europa -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_system_modes --dir=/tmp/alt9429_5695786925158968339.dir/0008_system_modes_gen/ --quartus_dir=/usr/local/3rdparty/altera/18.1/quartus --verilog --config=/tmp/alt9429_5695786925158968339.dir/0008_system_modes_gen//nios_system_system_modes_component_configuration.pl  --do_build_sim=0  ]
 Info: system_modes: Done RTL generation for module 'nios_system_system_modes'
 Info: system_modes: "nios_system" instantiated altera_avalon_pio "system_modes"
 Info: vga: Starting Generation of VGA Controller
@@ -149,8 +147,6 @@ Info: video_pll_0: "nios_system" instantiated altera_up_avalon_video_pll "video_
 Info: video_scaler: Starting Generation of Video Scaler
 Info: video_scaler: "nios_system" instantiated altera_up_avalon_video_scaler "video_scaler"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
-Info: mm_interconnect_0: "nios_system" instantiated altera_mm_interconnect "mm_interconnect_0"
-Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
@@ -158,35 +154,36 @@ Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
-Info: mm_interconnect_1: "nios_system" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "nios_system" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: irq_mapper: "nios_system" instantiated altera_irq_mapper "irq_mapper"
 Info: irq_synchronizer: "nios_system" instantiated altera_irq_clock_crosser "irq_synchronizer"
 Info: avalon_st_adapter: "nios_system" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: rst_controller: "nios_system" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'nios_system_processor_cpu'
-Info: cpu:   Generation command is [exec /usr/local/3rdparty/altera/18.1/quartus/linux64//eperlcmd -I /usr/local/3rdparty/altera/18.1/quartus/linux64//perl/lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/europa -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=nios_system_processor_cpu --dir=/tmp/alt9419_6233974869961900797.dir/0016_cpu_gen/ --quartus_bindir=/usr/local/3rdparty/altera/18.1/quartus/linux64/ --verilog --config=/tmp/alt9419_6233974869961900797.dir/0016_cpu_gen//nios_system_processor_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2023.03.03 10:06:29 (*) Starting Nios II generation
-Info: cpu: # 2023.03.03 10:06:29 (*)   Checking for plaintext license.
-Info: cpu: # 2023.03.03 10:06:29 (*)   Couldn't query license setup in Quartus directory /usr/local/3rdparty/altera/18.1/quartus/linux64/
-Info: cpu: # 2023.03.03 10:06:29 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2023.03.03 10:06:30 (*)   Plaintext license not found.
-Info: cpu: # 2023.03.03 10:06:30 (*)   Checking for encrypted license (non-evaluation).
-Info: cpu: # 2023.03.03 10:06:30 (*)   Couldn't query license setup in Quartus directory /usr/local/3rdparty/altera/18.1/quartus/linux64/
-Info: cpu: # 2023.03.03 10:06:30 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2023.03.03 10:06:30 (*)   Encrypted license found.  SOF will not be time-limited.
-Info: cpu: # 2023.03.03 10:06:30 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2023.03.03 10:06:30 (*)   Creating all objects for CPU
-Info: cpu: # 2023.03.03 10:06:30 (*)     Testbench
-Info: cpu: # 2023.03.03 10:06:30 (*)     Instruction decoding
-Info: cpu: # 2023.03.03 10:06:30 (*)       Instruction fields
-Info: cpu: # 2023.03.03 10:06:31 (*)       Instruction decodes
-Info: cpu: # 2023.03.03 10:06:31 (*)       Signals for RTL simulation waveforms
-Info: cpu: # 2023.03.03 10:06:31 (*)       Instruction controls
-Info: cpu: # 2023.03.03 10:06:31 (*)     Pipeline frontend
-Info: cpu: # 2023.03.03 10:06:31 (*)     Pipeline backend
-Info: cpu: # 2023.03.03 10:06:33 (*)   Generating RTL from CPU objects
-Info: cpu: # 2023.03.03 10:06:34 (*)   Creating encrypted RTL
-Info: cpu: # 2023.03.03 10:06:34 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec /usr/local/3rdparty/altera/18.1/quartus/linux64//eperlcmd -I /usr/local/3rdparty/altera/18.1/quartus/linux64//perl/lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/europa -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /usr/local/3rdparty/altera/18.1/quartus/sopc_builder/bin -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /usr/local/3rdparty/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=nios_system_processor_cpu --dir=/tmp/alt9429_5695786925158968339.dir/0016_cpu_gen/ --quartus_bindir=/usr/local/3rdparty/altera/18.1/quartus/linux64/ --verilog --config=/tmp/alt9429_5695786925158968339.dir/0016_cpu_gen//nios_system_processor_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2023.03.13 10:05:42 (*) Starting Nios II generation
+Info: cpu: # 2023.03.13 10:05:42 (*)   Checking for plaintext license.
+Info: cpu: # 2023.03.13 10:05:43 (*)   Couldn't query license setup in Quartus directory /usr/local/3rdparty/altera/18.1/quartus/linux64/
+Info: cpu: # 2023.03.13 10:05:43 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2023.03.13 10:05:43 (*)   Plaintext license not found.
+Info: cpu: # 2023.03.13 10:05:43 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2023.03.13 10:05:43 (*)   Couldn't query license setup in Quartus directory /usr/local/3rdparty/altera/18.1/quartus/linux64/
+Info: cpu: # 2023.03.13 10:05:43 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2023.03.13 10:05:43 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: cpu: # 2023.03.13 10:05:43 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2023.03.13 10:05:43 (*)   Creating all objects for CPU
+Info: cpu: # 2023.03.13 10:05:43 (*)     Testbench
+Info: cpu: # 2023.03.13 10:05:44 (*)     Instruction decoding
+Info: cpu: # 2023.03.13 10:05:44 (*)       Instruction fields
+Info: cpu: # 2023.03.13 10:05:44 (*)       Instruction decodes
+Info: cpu: # 2023.03.13 10:05:44 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2023.03.13 10:05:44 (*)       Instruction controls
+Info: cpu: # 2023.03.13 10:05:44 (*)     Pipeline frontend
+Info: cpu: # 2023.03.13 10:05:44 (*)     Pipeline backend
+Info: cpu: # 2023.03.13 10:05:46 (*)   Generating RTL from CPU objects
+Info: cpu: # 2023.03.13 10:05:47 (*)   Creating encrypted RTL
+Info: cpu: # 2023.03.13 10:05:48 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'nios_system_processor_cpu'
 Info: cpu: "processor" instantiated altera_nios2_gen2_unit "cpu"
 Info: sys_pll: "sys_sdram_pll" instantiated altera_up_altpll "sys_pll"
@@ -198,43 +195,40 @@ Info: sram_controller_avalon_sram_slave_agent: "mm_interconnect_0" instantiated 
 Info: sram_controller_avalon_sram_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "sram_controller_avalon_sram_slave_agent_rsp_fifo"
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
+Info: router_009: "mm_interconnect_0" instantiated altera_merlin_router "router_009"
+Info: processor_data_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "processor_data_master_limiter"
+Info: Reusing file /acct/mjonker/csce-313-embedded-systems/313/nios_system/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: sram_controller_avalon_sram_slave_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sram_controller_avalon_sram_slave_burst_adapter"
+Info: Reusing file /acct/mjonker/csce-313-embedded-systems/313/nios_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file /acct/mjonker/csce-313-embedded-systems/313/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /acct/mjonker/313/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /acct/mjonker/csce-313-embedded-systems/313/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file /acct/mjonker/csce-313-embedded-systems/313/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
+Info: Reusing file /acct/mjonker/csce-313-embedded-systems/313/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: sram_controller_avalon_sram_slave_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sram_controller_avalon_sram_slave_rsp_width_adapter"
-Info: Reusing file /acct/mjonker/313/nios_system/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file /acct/mjonker/313/nios_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file /acct/mjonker/csce-313-embedded-systems/313/nios_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file /acct/mjonker/csce-313-embedded-systems/313/nios_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
+Info: Reusing file /acct/mjonker/csce-313-embedded-systems/313/nios_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
-Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
-Info: router_001: "mm_interconnect_1" instantiated altera_merlin_router "router_001"
-Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
-Info: router_003: "mm_interconnect_1" instantiated altera_merlin_router "router_003"
-Info: router_007: "mm_interconnect_1" instantiated altera_merlin_router "router_007"
-Info: processor_data_master_limiter: "mm_interconnect_1" instantiated altera_merlin_traffic_limiter "processor_data_master_limiter"
-Info: Reusing file /acct/mjonker/313/nios_system/synthesis/submodules/altera_avalon_sc_fifo.v
-Info: Reusing file /acct/mjonker/313/nios_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
-Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
-Info: cmd_demux_001: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux_001"
-Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file /acct/mjonker/313/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: cmd_mux_005: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux_005"
-Info: Reusing file /acct/mjonker/313/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
-Info: rsp_demux_005: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux_005"
-Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /acct/mjonker/313/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: rsp_mux_001: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux_001"
-Info: Reusing file /acct/mjonker/313/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: crosser: "mm_interconnect_1" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
-Info: Reusing file /acct/mjonker/313/nios_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
-Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
-Info: avalon_st_adapter_001: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
+Info: avalon_st_adapter_001: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
+Info: avalon_st_adapter_002: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_002"
 Info: channel_adapter_0: "avalon_st_adapter" instantiated channel_adapter "channel_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
-Info: nios_system: Done "nios_system" with 58 modules, 99 files
+Info: error_adapter_0: "avalon_st_adapter_002" instantiated error_adapter "error_adapter_0"
+Info: nios_system: Done "nios_system" with 55 modules, 96 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

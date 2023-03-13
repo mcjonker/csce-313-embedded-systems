@@ -300,6 +300,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "SRAM_WE_N",
+					"strict" : false
+				},
+				{
 					"name" : "DRAM_DQ[0]",
 					"strict" : false
 				},
