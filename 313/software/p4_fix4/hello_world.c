@@ -7,83 +7,115 @@
 #include "altera_avalon_pio_regs.h"
 #include "system.h"
 #include "myfile.h"
+#include  "myfile.c"
 #include <math.h>
 #include <sys/alt_alarm.h>
 #include <altera_up_avalon_video_pixel_buffer_dma.h> // pixel buffer dma
 
-void clearScreen() {
-	alt_up_pixel_buffer_dma_clear_screen(my_pixel_buffer, 0);
+void clearScreen(alt_up_pixel_buffer_dma_dev *my_pixel_buffer) {
+	alt_putstr("Clearing Buffer\n");
+	//alt_up_pixel_buffer_dma_clear_screen(my_pixel_buffer, 0);
+	alt_putstr("Buffer Cleared\n");
 }
-void displayScaledImage(float f) {
-	for (int i = 0; i < 320; i++) {
-		for (int j = 0; j < 240; j++) {
-			alt_up_pixel_buffer_dma_draw(my_pixel_buffer,
-				(myimage[(i*320*3+j*3+2)]) +
-				(myimage[(i*320*3+j*3+1)]<<8) +
-				(myimage[(i*320*3+j*3+0)]<<16),j*f,i*f);
-		}
-	}
-}
+
+//void displayScaledImage(float f,alt_up_pixel_buffer_dma_dev *my_pixel_buffer, alt_u8 *simage_array[]) {
+//	for (int i = 0; i < 320; i++) {
+//		for (int j = 0; j < 320; j++) {
+//			alt_up_pixel_buffer_dma_draw(my_pixel_buffer,
+//				(myimage[(i*320*3+j*3+2)]) +
+//				(myimage[(i*320*3+j*3+1)]<<8) +
+//				(myimage[(i*320*3+j*3+0)]<<16),j*f,i*f);
+//		}
+//	}
+//}
+
+
 int main() {
+
 	// Declare the mode variable as alt_u8 and initialize with 0
 	alt_putstr("Hunter Frady and Mitchell Jonker - Project 3 - CSCE 313\n");
 	alt_u8 mode = 0; // 8-bit mode variable
-	float scale = 1.0; // image scaling variable
-
+	float scale; // image scaling variable
+	scale = 1.0;
+	if (scale < 0) {
+		scale = 1.0;
+	}
 	// Read pixel buffer (go to no.6 of software requirements in the assignment sheet)
 	alt_up_pixel_buffer_dma_dev *my_pixel_buffer;
 	my_pixel_buffer = alt_up_pixel_buffer_dma_open_dev("/dev/dma_buffer");
 
 	// check if pixel buffer array contains the image code (part 6 of assignment sheet)
 	if(!my_pixel_buffer) {
-		printf("Error opening pixel buffer\n");
-		// Exit/return -1?
+		alt_putstr("Error opening pixel buffer\n");
 	}
 
 	// clear the screen (part 7 of assignment sheet)
-	clearScreen();
+	clearScreen(my_pixel_buffer);
 
-  while (1) { // operation loop
+//	alt_u8 lastmode = 0x14; // arbitrary mode number
+	while (1) {
 
-	mode = IORD_ALTERA_AVALON_PIO_DATA(SYSTEM_MODES_BASE); // mode switches input
+		mode = IORD_ALTERA_AVALON_PIO_DATA(SYSTEM_MODES_BASE); // mode switches input
 
-	if (mode = 0x00) {
-		alt_putstr("Mode 0: Display image at 1.0 Scale\n");
-		// display image at 1.0 scale
-		scale = 1.0;
-		clearScreen();
-		displayScaledImage(scale);
 
-	} // end of mode 0
+		if (mode == 0x00) {//&& lastmode != 0x00) {
 
-	if (mode == 0x01) {
-		alt_putstr("Mode 1: Display image at 0.5 Scale\n");
-		// display image at 0.5 scale
-		scale = 0.5;
-		clearScreen();
-		displayScaledImage(scale);
+			alt_putstr("Display image at 1.0 scale\n");
+			scale = 1.0;
+			clearScreen(my_pixel_buffer);
+			//displayScaledImage(scale, my_pixel_buffer, myimage);
+			for (int i = 0; i < 320; i++) {
+				for (int j = 0; j < 320; j++) {
+					alt_up_pixel_buffer_dma_draw(my_pixel_buffer,
+						(myimage[(i*320*3+j*3+2)]) +
+						(myimage[(i*320*3+j*3+1)]<<8) +
+						(myimage[(i*320*3+j*3+0)]<<16),j*scale,i*scale);
+				}
+			}
 
-	} // end of mode 1
+		} // end of mode 0
 
-	// check the mode value. If mode is 2.
-	if (mode == 0x02) {
-		alt_putstr("Mode 0: Display image at 2.0 Scale\n");
-		// display image at 2.0 scale
-		scale = 2.0;
-		clearScreen();
-		displayScaledImage(scale);
+		if (mode == 0x01) {
+			//alt_putstr("Display image at 0.5 scale\n");
+			scale = 0.5;
+			clearScreen(my_pixel_buffer);
+			//displayScaledImage(scale, my_pixel_buffer, myimage);
+			for (int i = 0; i < 320; i++) {
+				for (int j = 0; j < 320; j++) {
+					alt_up_pixel_buffer_dma_draw(my_pixel_buffer,
+						(myimage[(i*320*3+j*3+2)]) +
+						(myimage[(i*320*3+j*3+1)]<<8) +
+						(myimage[(i*320*3+j*3+0)]<<16),j*scale,i*scale);
+				}
+			}
 
-	} // end of mode 2
+		} // end of mode 1
 
-	// check the mode value. If mode is 3.  print the message "Video message" on the console
-	if (mode == 0x03) {
-		alt_putstr("Mode 3 Enabled\n");
-		alt_putstr("Video project\n");
-		clearScreen();
+		// check the mode value. If mode is 2.
+		if (mode == 0x02) {
+			//alt_putstr("Display image at 2.0 scale\n");
+			scale = 2.0;
+			clearScreen(my_pixel_buffer);
+			//displayScaledImage(scale, my_pixel_buffer, myimage);
+			for (int i = 0; i < 320; i++) {
+				for (int j = 0; j < 320; j++) {
+					alt_up_pixel_buffer_dma_draw(my_pixel_buffer,
+						(myimage[(i*320*3+j*3+2)]) +
+						(myimage[(i*320*3+j*3+1)]<<8) +
+						(myimage[(i*320*3+j*3+0)]<<16),j*scale,i*scale);
+				}
+			}
 
-	} // end of mode 3
+		} // end of mode 2
 
-  } // end of while loop
+		// check the mode value. If mode is 3.  print the message "Video message" on the console
+		if (mode == 0x03) {
+			//alt_putstr("Video project message\n");
+			clearScreen(my_pixel_buffer);
+
+		} // end of mode 3
+
+	  } // end of while loop
 
   return 0;
 

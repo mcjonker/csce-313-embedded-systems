@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 3, 2023 11:04:10 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1677859450976</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Mar 17, 2023 9:26:21 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1679059581049</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/acct/mjonker/313/software/p4_fix4_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../nios_system.sopcinfo</SopcDesignFile>
