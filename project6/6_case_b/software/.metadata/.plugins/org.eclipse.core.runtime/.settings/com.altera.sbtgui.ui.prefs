@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+newSoftwareExampleWizardPage.defaultLocation=/acct/mjonker/csce-313-embedded-systems/project6/6_case_b/software/p6_partb
+newSoftwareExampleWizardPage.sopcinfoFile=/acct/mjonker/csce-313-embedded-systems/project6/6_case_b/nios_system.sopcinfo
+newSoftwareExampleWizardPage2.newBspLocation=/acct/mjonker/csce-313-embedded-systems/project6/6_case_b/software/p6_partb_bsp

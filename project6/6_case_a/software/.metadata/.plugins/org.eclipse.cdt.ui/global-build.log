@@ -1,0 +1,30 @@
+08:44:34 **** Build of configuration Nios II for project proj5 ****
+make all 
+Info: Building ../proj5_bsp/
+make --no-print-directory -C ../proj5_bsp/
+[BSP build complete]
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+nios2-elf-gcc -xc -MP -MMD -c -I../proj5_bsp//HAL/inc -I../proj5_bsp/ -I../proj5_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
+Info: Compiling myfile.c to obj/default/myfile.o
+nios2-elf-gcc -xc -MP -MMD -c -I../proj5_bsp//HAL/inc -I../proj5_bsp/ -I../proj5_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/myfile.o myfile.c
+Info: Linking proj5.elf
+nios2-elf-g++  -T'../proj5_bsp//linker.x' -msys-crt0='../proj5_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../proj5_bsp/  -msmallc  -Wl,-Map=proj5.map   -Os -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o proj5.elf obj/default/hello_world_small.o obj/default/myfile.o -lm -msys-lib=m
+nios2-elf-insert proj5.elf --thread_model hal --cpu_name processor --qsys true --simulation_enabled false --id 0 --sidp 0x203030 --timestamp 1679939755 --stderr_dev jtag --stdin_dev jtag --stdout_dev jtag --sopc_system_name nios_system --quartus_project_dir "/acct/mjonker/Documents/forth" --jdi ../..//output_files/test.jdi --sopcinfo /acct/mjonker/Documents/forth/software/proj5_bsp/../../nios_system.sopcinfo
+Picked up _JAVA_OPTIONS: -Duser.home=/acct/mjonker
+Info: (proj5.elf) 1830 KBytes program size (code + initialized data).
+Info:             129241 KBytes free for stack + heap.
+Info: Creating proj5.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source proj5.elf >proj5.objdump
+[proj5 build complete]
+08:44:37 **** Build of configuration Nios II for project proj5 ****
+make all 
+Info: Building ../proj5_bsp/
+make --no-print-directory -C ../proj5_bsp/
+[BSP build complete]
+[proj5 build complete]
+08:44:38 **** Incremental Build of configuration Nios II for project proj5 ****
+make all 
+Info: Building ../proj5_bsp/
+make --no-print-directory -C ../proj5_bsp/
+[BSP build complete]
+[proj5 build complete]

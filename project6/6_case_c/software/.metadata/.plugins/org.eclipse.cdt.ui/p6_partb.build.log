@@ -1,0 +1,9 @@
+18:13:27 **** Incremental Build of configuration Nios II for project p6_partb ****
+make all 
+Info: Building ../p6_partb_bsp/
+make --no-print-directory -C ../p6_partb_bsp/
+[BSP build complete]
+[p6_partb build complete]
+
+18:13:27 Build Finished (took 241ms)
+
